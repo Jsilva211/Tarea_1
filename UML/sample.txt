@@ -1,0 +1,1 @@
+Envío 2 versiones del diagrama UML (.pdf y .png respectivamente) en caso de que la calidad del .png no sea muy buena al abrirse. 
