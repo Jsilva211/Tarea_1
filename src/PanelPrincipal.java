@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import javax.swing.*;
 public class PanelPrincipal extends JPanel {//se ve en el centro de la ventana
