@@ -11,6 +11,7 @@ class Expendedor {
     private Deposito coca;
     private Deposito sprite;
     private DepositoM monVu;
+    public DepositoM monPa;
     private Deposito sniker;
     private Deposito super8;
 
@@ -37,6 +38,7 @@ class Expendedor {
         coca = new Deposito();
         sprite = new Deposito();
         monVu = new DepositoM();
+        monPa = new DepositoM();
         numProductos = numProductoss;
         sniker = new Deposito();
         super8 = new Deposito();
@@ -164,10 +166,42 @@ class Expendedor {
 
     /**
      *
-     * @return: retorna la cantidad de monedas en el depósito de vuelto
+     * @return: retorna la cantidad de elementos en el depósito
      */
     public int taam(){
         return monVu.tam();
     }
+    /**
+     *
+     * @return: retorna la cantidad de elementos en el depósito
+     */
+    public int ccoca(){
+        return coca.tam();
+    }
+    /**
+     *
+     * @return: retorna la cantidad de elementos en el depósito
+     */
+    public int csprite(){
+        return sprite.tam();
+    }
+    /**
+     *
+     * @return: retorna la cantidad de elementos en el depósito
+     */
+    public int csuper8(){
+        return super8.tam();
+    }
+    /**
+     *
+     * @return: retorna la cantidad de elementos en el depósito
+     */
+    public int csnicker(){return sniker.tam();}
+
+    public void Pago(Moneda mm){
+        monPa.addMoneda(mm);
+
+    }
+
 
 }

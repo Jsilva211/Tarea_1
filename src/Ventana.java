@@ -7,7 +7,8 @@ public class Ventana extends JFrame {
 
         this.setTitle("esta Ventana");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1000,700);
+        this.setSize(900,750);
+        this.setResizable(false);
         PanelPrincipal a = new PanelPrincipal();
         this.add(a);
         this.setVisible(true);

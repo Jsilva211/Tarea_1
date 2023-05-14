@@ -5,9 +5,10 @@ import javax.swing.*;
 
 public class PanelComprador extends JPanel {
     Moneda m ;
-    Expendedor ex = new Expendedor(4,1000);
-    int cualproducto;
-    public PanelComprador(){
+    int vueltocom;
+
+    int cualproducto, vuelto=0;
+    public PanelComprador(PanelExpendedor a){
 
 
         this.setLayout(new GridLayout(5,2 ,10, 10));
@@ -31,8 +32,9 @@ public class PanelComprador extends JPanel {
         imagenes[7] = new ImageIcon("Tarea_1/src/snicker.png");
         JToggleButton b8 = new JToggleButton(imagenes[7]);
 
-        JButton b9 = new JButton("Comprar");
-        JButton b10 = new JButton("Obtener Vuelto");
+        JToggleButton b9 = new JToggleButton("Comprar");
+        JToggleButton b10 = new JToggleButton("Obtener Vuelto");
+        b10.setEnabled(false);
 
         this.add(b1);
         b1.addActionListener(new ActionListener() {
@@ -174,15 +176,58 @@ public class PanelComprador extends JPanel {
 
         this.add(b9);
         b9.addActionListener(new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
+
+
                 // Código que se ejecuta cuando se hace clic en el botón
                 try {
                     Comprador c;
-                    c = new Comprador(m, cualproducto, ex);
-                    System.out.println(c.queConsumiste() + ",vuelto " + c.cuantoVuelto());
-                } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException f) {
+                    c = new Comprador(m, cualproducto, a.expen);
+                    vueltocom= c.cuantoVuelto();
+                    vueltocom=vueltocom/100;
+                    a.vvv= vueltocom;
+                    if(cualproducto==Expendedor.COCA){a.setEstado(1);}
+                    if(cualproducto==Expendedor.SNKR){a.setEstado(4);}
+                    if(cualproducto==Expendedor.SPRITE){a.setEstado(2);}
+                    if(cualproducto==Expendedor.SPR8){a.setEstado(3);}
 
+                    b10.setEnabled(true);
+                    b9.setEnabled(false);
+                    b8.setEnabled(false);
+                    b7.setEnabled(false);
+                    b6.setEnabled(false);
+                    b5.setEnabled(false);
+                    b4.setEnabled(false);
+                    b3.setEnabled(false);
+                    b2.setEnabled(false);
+                    b1.setEnabled(false);
+
+
+                    a.expen.Pago(m);
+                } catch ( PagoIncorrectoException f) {
+
+                }catch(PagoInsuficienteException | NoHayProductoException eee){
+                    vueltocom= m.getValor();
+                    vueltocom=vueltocom/100;
+                    a.vvv= vueltocom;
+
+                    b10.setEnabled(true);
+                    b9.setEnabled(false);
+                    b8.setEnabled(false);
+                    b7.setEnabled(false);
+                    b6.setEnabled(false);
+                    b5.setEnabled(false);
+                    b4.setEnabled(false);
+                    b3.setEnabled(false);
+                    b2.setEnabled(false);
+                    b1.setEnabled(false);
                 }
+                m=null;
+                cualproducto=4434;
+
+
+
                 b1.setSelected(false);
                 b2.setSelected(false);
                 b3.setSelected(false);
@@ -198,8 +243,18 @@ public class PanelComprador extends JPanel {
         this.add(b10);
         b10.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Código que se ejecuta cuando se hace clic en el botón
-                System.out.println("Se ha hecho clic en el botón");
+                b10.setEnabled(false);
+                b9.setEnabled(true);
+                b8.setEnabled(true);
+                b7.setEnabled(true);
+                b6.setEnabled(true);
+                b5.setEnabled(true);
+                b4.setEnabled(true);
+                b3.setEnabled(true);
+                b2.setEnabled(true);
+                b1.setEnabled(true);
+                a.setEstado(5);
+                vuelto =0;
             }
         });
 

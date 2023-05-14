@@ -3,11 +3,14 @@ import java.awt.*;
 
 public class PanelPrincipal extends JPanel {
     private PanelComprador com;
+    private PanelExpendedor exp;
     public PanelPrincipal(){
-        this.setLayout(new BorderLayout());
-        com = new PanelComprador();
+        this.setLayout(new GridLayout(1,2));
+        exp = new PanelExpendedor();
+        com = new PanelComprador(exp);
         this.setBackground(Color.white);
-        this.add(com,BorderLayout.EAST);
+        this.add(exp);
+        this.add(com);
 
     }
 

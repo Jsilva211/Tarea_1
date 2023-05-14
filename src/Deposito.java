@@ -43,4 +43,7 @@ class Deposito{
         }
 
     }
+    public int tam(){
+        return var.size();
+    }
 }
