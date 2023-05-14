@@ -51,6 +51,9 @@ public class PanelComprador extends JPanel {
                 if(b1.isSelected()){
                      m = new Moneda100();
                 }
+                if(!b1.isSelected()){
+                    m=null;
+                }
             }
         });
         this.add(b2);
@@ -67,6 +70,9 @@ public class PanelComprador extends JPanel {
                 }
                 if(b2.isSelected()){
                      m = new Moneda500();
+                }
+                if(!b2.isSelected()){
+                    m=null;
                 }
             }
         });
@@ -85,6 +91,9 @@ public class PanelComprador extends JPanel {
                 if(b3.isSelected()){
                      m = new Moneda1000();
                 }
+                if(!b3.isSelected()){
+                    m=null;
+                }
             }
         });
         this.add(b4);
@@ -102,6 +111,9 @@ public class PanelComprador extends JPanel {
                 if(b4.isSelected()){
                      m = new Moneda1500();
                 }
+                if(!b4.isSelected()){
+                    m=null;
+                }
             }
         });
         this.add(b5);
@@ -118,6 +130,9 @@ public class PanelComprador extends JPanel {
                 }
                 if(b5.isSelected()){
                      cualproducto = Expendedor.COCA;
+                }
+                if(!b5.isSelected()){
+                    cualproducto = 3434;
                 }
             }
         });
@@ -137,6 +152,9 @@ public class PanelComprador extends JPanel {
                 if(b6.isSelected()){
                     cualproducto = Expendedor.SPRITE;
                 }
+                if(!b6.isSelected()){
+                    cualproducto = 3434;
+                }
             }
         });
         this.add(b7);
@@ -154,6 +172,9 @@ public class PanelComprador extends JPanel {
                 if(b7.isSelected()){
                     cualproducto = Expendedor.SPR8;
                 }
+                if(!b7.isSelected()){
+                    cualproducto = 3434;
+                }
             }
         });
         this.add(b8);
@@ -170,6 +191,9 @@ public class PanelComprador extends JPanel {
                 }
                 if(b8.isSelected()){
                     cualproducto = Expendedor.SNKR;
+                }
+                if(!b8.isSelected()){
+                    cualproducto = 3434;
                 }
             }
         });
