@@ -1,4 +1,4 @@
-# Tarea_1
+# Tarea_2
 Tarea 1 programación 2 
 
 Nombre: Nicolás González Barramuño
