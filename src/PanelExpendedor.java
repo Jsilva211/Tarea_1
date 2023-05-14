@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PanelExpendedor extends JPanel{
-    public static Expendedor expen = new Expendedor(5,500);
+    public static Expendedor expen = new Expendedor(4,500);
     public int vvv;
     ImageIcon fondo = new ImageIcon("Tarea_1/src/exp.png");
     ImageIcon[] imagenes = new ImageIcon[8];
