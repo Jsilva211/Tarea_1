@@ -8,12 +8,12 @@ class Expendedor {
      * para guardar los productos destinados de ser
      * comercializados
      */
-    private Deposito coca;
-    private Deposito sprite;
-    private DepositoM monVu;
-    public DepositoM monPa;
-    private Deposito sniker;
-    private Deposito super8;
+    private Deposito<Bebida> coca;
+    private Deposito<Bebida> sprite;
+    private Deposito<Moneda> monVu;
+    public Deposito<Moneda> monPa;
+    private Deposito<Dulce> sniker;
+    private Deposito<Dulce> super8;
 
     /**
      * variable publica que guarda el precio de los productos
@@ -35,13 +35,13 @@ class Expendedor {
      * @param precioProductoss : precio de los productos
      */
     public Expendedor(int numProductoss, int precioProductoss) {
-        coca = new Deposito();
-        sprite = new Deposito();
-        monVu = new DepositoM();
-        monPa = new DepositoM();
+        coca = new Deposito<>();
+        sprite = new Deposito<>();
+        monVu = new Deposito<>();
+        monPa = new Deposito<>();
         numProductos = numProductoss;
-        sniker = new Deposito();
-        super8 = new Deposito();
+        sniker = new Deposito<>();
+        super8 = new Deposito<>();
 
         precioProductos = precioProductoss;
         for (int i = 0; i < numProductos; i++) {
@@ -87,13 +87,13 @@ class Expendedor {
                     case 1:
                         b = coca.getProducto();
                         if (b == null) {
-                            monVu.addMoneda(m);
-                            throw new NoHayProductoException("No quedan CocaColas, vuelto: "+this.getVuelto().getValor());
+                            monVu.addProducto(m);
+                            throw new NoHayProductoException("No quedan CocaColas");
                         } else {
 
                             for (int i = 0; i < (m.getValor() - precioProductos) / 100; i++) {
                                 Moneda100 monv = new Moneda100();
-                                monVu.addMoneda(monv);
+                                monVu.addProducto(monv);
                             }
                             return b;
                         }
@@ -101,13 +101,13 @@ class Expendedor {
                     case 2:
                         b = sprite.getProducto();
                         if (b == null) {
-                            monVu.addMoneda(m);
-                            throw new NoHayProductoException("No quedan Sprites, vuelto: "+this.getVuelto().getValor());
+                            monVu.addProducto(m);
+                            throw new NoHayProductoException("No quedan Sprites");
                         } else {
 
                             for (int i = 0; i < (m.getValor() - precioProductos) / 100; i++) {
                                 Moneda100 monv = new Moneda100();
-                                monVu.addMoneda(monv);
+                                monVu.addProducto(monv);
                             }
                             return b;
 
@@ -115,13 +115,13 @@ class Expendedor {
                     case 3:
                         b = sniker.getProducto();
                         if (b == null) {
-                            monVu.addMoneda(m);
-                            throw new NoHayProductoException("No quedan Snickers, vuelto: "+this.getVuelto().getValor());
+                            monVu.addProducto(m);
+                            throw new NoHayProductoException("No quedan Snickers");
                         } else {
 
                             for (int i = 0; i < (m.getValor() - precioProductos) / 100; i++) {
                                 Moneda100 monv = new Moneda100();
-                                monVu.addMoneda(monv);
+                                monVu.addProducto(monv);
                             }
                             return b;
                         }
@@ -129,28 +129,28 @@ class Expendedor {
                     case 4:
                         b = super8.getProducto();
                         if (b == null) {
-                            monVu.addMoneda(m);
-                            throw new NoHayProductoException("No quedan Super 8's, vuelto: "+this.getVuelto().getValor());
+                            monVu.addProducto(m);
+                            throw new NoHayProductoException("No quedan Super 8's");
                         } else {
 
                             for (int i = 0; i < (m.getValor() - precioProductos) / 100; i++) {
                                 Moneda100 monv = new Moneda100();
-                                monVu.addMoneda(monv);
+                                monVu.addProducto(monv);
                             }
                             return b;
 
                         }
 
                     default:
-                        monVu.addMoneda(m);
-                        throw new NoHayProductoException("No existe ese producto, vuelto: "+this.getVuelto().getValor());
+                        monVu.addProducto(m);
+                        throw new NoHayProductoException("No existe ese producto");
                 }
             } else {
-                monVu.addMoneda(m);
+                monVu.addProducto(m);
                 if(cual!=1&&cual!=2&&cual!=3&&cual!=4){
-                    throw new NoHayProductoException("No existe ese producto, vuelto: "+this.getVuelto().getValor());
+                    throw new NoHayProductoException("No existe ese producto");
                 }else{
-                throw new PagoInsuficienteException("Pago insuficiente, vuelto: "+this.getVuelto().getValor());}
+                throw new PagoInsuficienteException("Pago insuficiente");}
             }
         }
     }
@@ -160,7 +160,7 @@ class Expendedor {
      * @return : retorna una moneda de 100 a la vez
      */
     public Moneda getVuelto() {
-        return monVu.getMoneda();
+        return monVu.getProducto();
 
     }
 
@@ -199,7 +199,7 @@ class Expendedor {
     public int csnicker(){return sniker.tam();}
 
     public void Pago(Moneda mm){
-        monPa.addMoneda(mm);
+        monPa.addProducto(mm);
 
     }
 

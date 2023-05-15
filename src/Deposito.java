@@ -4,13 +4,13 @@ import java.util.ArrayList;
  * Clase depositó donde se guarda una lista de <Productos>
  * desde la cual el expendedor obtiene los productos a vender
  */
-class Deposito{
+class Deposito<T>{
     /**
      * Propiedad privada arraylist con Producto como generico
      * aquí se guardan los productos que se crean en el constructor
      * de expendedor
      */
-    private ArrayList<Producto> var;
+    private ArrayList<T> var;
 
     /**
      * Constructor de depósito, inicializa la variable
@@ -25,7 +25,7 @@ class Deposito{
      * @param a : el producto añadido al depósito
      *
      */
-    public void addProducto(Producto a){
+    public void addProducto(T a){
         var.add(a) ;
     }
 
@@ -33,12 +33,12 @@ class Deposito{
      * Metodo que retorna el último producto del arraylist var
      * @return : el último elemento<producto> del arraylist var
      */
-    public Producto getProducto(){
+    public T getProducto(){
         if(var.size()>0){
-            Producto b =  var.remove(0);
+            T b =  var.remove(0);
             return b;
         } else{
-            Producto b = null;
+            T b = null;
             return null ;
         }
 

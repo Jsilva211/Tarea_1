@@ -6,7 +6,9 @@ class Moneda100 extends Moneda{
     /**
      * Metodo constructor de moneda de 100
      */
-    public Moneda100(){}
+    public Moneda100(){
+        super();
+    }
     /**
      * Metodo que retorna el valor de la moneda
      * @return : 100

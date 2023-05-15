@@ -3,7 +3,7 @@
  * utilizadas para comprar en el expendedor
  *
  */
-abstract class Moneda{
+abstract class Moneda implements Comparable<Moneda>{
     /**
      * Metodo constructor de moneda
      */
@@ -14,6 +14,10 @@ abstract class Moneda{
      */
     public Moneda getSerie(){
         return this;
+    }
+    @Override
+    public int compareTo(Moneda monedaprueba){
+        return (this.getValor()-monedaprueba.getValor());
     }
 
     /**

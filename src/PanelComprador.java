@@ -232,7 +232,7 @@ public class PanelComprador extends JPanel {
                 } catch ( PagoIncorrectoException f) {
 
                 }catch(PagoInsuficienteException | NoHayProductoException eee){
-                    vueltocom= m.getValor();
+                    vueltocom= PanelExpendedor.expen.getVuelto().getValor();
                     vueltocom=vueltocom/100;
                     a.vvv= vueltocom;
 
