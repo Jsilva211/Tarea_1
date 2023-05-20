@@ -6,27 +6,27 @@ import javax.swing.*;
 public class PanelExpendedor extends JPanel{
     public static Expendedor expen = new Expendedor(4,500);
     public int vvv;
-    ImageIcon fondo = new ImageIcon("Tarea_1/src/exp.png");
+    ImageIcon fondo = new ImageIcon("src/exp.png");
     ImageIcon[] imagenes = new ImageIcon[8];
 
     public PanelExpendedor(){
         Color c = new Color(31, 39, 50);
         this.setBackground(c);
-        imagenes[0] = new ImageIcon("Tarea_1/src/100peso.png");
+        imagenes[0] = new ImageIcon("src/100peso.png");
 
-        imagenes[1] = new ImageIcon("Tarea_1/src/500peso.png");
+        imagenes[1] = new ImageIcon("src/500peso.png");
 
-        imagenes[2] = new ImageIcon("Tarea_1/src/1000peso.png");
+        imagenes[2] = new ImageIcon("src/1000peso.png");
 
-        imagenes[3] = new ImageIcon("Tarea_1/src/1500peso.png");
+        imagenes[3] = new ImageIcon("src/1500peso.png");
 
-        imagenes[4] = new ImageIcon("Tarea_1/src/coca.png");
+        imagenes[4] = new ImageIcon("src/coca.png");
 
-        imagenes[5] = new ImageIcon("Tarea_1/src/sprite.png");
+        imagenes[5] = new ImageIcon("src/sprite.png");
 
-        imagenes[6] = new ImageIcon("Tarea_1/src/super8.png");
+        imagenes[6] = new ImageIcon("src/super8.png");
 
-        imagenes[7] = new ImageIcon("Tarea_1/src/snicker.png");
+        imagenes[7] = new ImageIcon("src/snicker.png");
 
     }
     private int estado=0 ;
